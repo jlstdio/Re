@@ -1,3 +1,6 @@
+### 링크
+[프로젝트 사이트](teragoon.wordpress.com)
+
 # Re
 Project to make your old Android smart phone into a SmartSpeaker
 
