@@ -25,6 +25,7 @@ It would be good for you and good for our planet too!
 | AI Feature | none |
 
 - The feature under here is going to be added as soon as possible
+
 this chart can be changed
 
 | content | feature |
