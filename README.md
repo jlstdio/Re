@@ -14,6 +14,7 @@ It would be good for you and good for our planet too!
 
 #Feature
 - added
+
 | content | added feature |
 | :------------ | :-----------: |
 | Basic Feature | voice recognition(continuous) |
@@ -22,6 +23,7 @@ It would be good for you and good for our planet too!
 
 - The feature under here is going to be added as soon as possible
 this chart can be changed
+
 | content | feature |
 | :------------ | :-----------: |
 | Basic Feature | weather, time, timer, alarm, memo, search,  |
