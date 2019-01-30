@@ -1,5 +1,5 @@
-### 링크
-[프로젝트 사이트](teragoon.wordpress.com)
+# Site link
+[Project site](https://neo81389.github.io/Re/)
 
 # Re
 Project to make your old Android smart phone into a SmartSpeaker
