@@ -30,6 +30,6 @@ this chart can be changed
 
 | content | feature |
 | :------------ | :-----------: |
-| Basic Feature | weather, time, timer, alarm, memo, search,  |
-| Smart Feature | none |
-| AI Feature | none |
+| Basic Feature | weather, time, timer, alarm, memo, search, radio, calculate, message, reminer, news, sports, date, currency, stock, distionary, find my phone, volume adjustment, movie, Tv |
+| Smart Feature | Understanding context, recognizing user's pattern, error report, phone sync, IOT, recognizing user |
+| AI Feature | Understanding situation, talk to user itself, join conversation |
