@@ -2,9 +2,7 @@ package com.joonheelee.roadster;
 
 import android.app.Activity;
 import android.graphics.Color;
-import android.icu.text.UnicodeSetSpanner;
 import android.os.Bundle;
-import android.speech.tts.UtteranceProgressListener;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -16,14 +14,12 @@ import com.vikramezhil.droidspeech.DroidSpeech;
 import com.vikramezhil.droidspeech.OnDSListener;
 import com.vikramezhil.droidspeech.OnDSPermissionsListener;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
 
-
+import com.joonheelee.roadster.Input;
 
 /**
  * Droid Speech Example Activity
@@ -37,7 +33,8 @@ public class MainActivity extends Activity implements OnClickListener, OnDSListe
     private DroidSpeech droidSpeech;
     private Button start, stop;
     TextView finalSpeechResult;
-    private boolean initialized;
+
+    static public String voiceinput;
 
     TextToSpeech tts;
 
@@ -156,6 +153,8 @@ public class MainActivity extends Activity implements OnClickListener, OnDSListe
         tts.speak(myText1, TextToSpeech.QUEUE_FLUSH, null);
         tts.speak(myText2, TextToSpeech.QUEUE_ADD, null);
 
+        Input i = new Input();
+        i.word();
     }
 
     @Override
@@ -164,6 +163,7 @@ public class MainActivity extends Activity implements OnClickListener, OnDSListe
         Log.i(TAG, "Live speech result = " + liveSpeechResult);
         if(liveSpeechResult.contains("마크")){
             droidSpeech.closeDroidSpeechOperations();
+            voiceinput = liveSpeechResult;
             callname();
         }
 
@@ -175,6 +175,7 @@ public class MainActivity extends Activity implements OnClickListener, OnDSListe
 
         if (finalSpeechResult.equals("마크")) {
             droidSpeech.closeDroidSpeechOperations();
+            voiceinput = finalSpeechResult;
             callname();
         }
         else
