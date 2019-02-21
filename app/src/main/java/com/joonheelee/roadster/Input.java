@@ -14,7 +14,20 @@ public class Input {
         * 오늘 맑아?
         * 오늘 온도어떄
         * */
-        if(input.contains("날씨")){
+        if(input.contains("기온")  || input.contains("온")){
+            
+        }
+
+        if(input.contains("미세먼지")){
+
+        }
+
+        if(input.contains("비") || input.contains("눈") || input.contains("안개")){
+
+        }
+
+        if(input.contains("맑아") || input.contains("흐려")){
+
         }
 
         //Volume
@@ -27,8 +40,18 @@ public class Input {
         * */
 
         //timer matter
+        if(input.contains("몇 시") || input.contains("몇시")){
+            if(input.contains("지금")){
+
+            }
+        }
 
         //date
+        if(input.contains("날짜") || input.contains("요일")){
+           if(input.contains("오늘")){
+
+            }
+        }
 
         //alarm
 

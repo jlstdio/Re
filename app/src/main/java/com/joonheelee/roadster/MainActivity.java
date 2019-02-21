@@ -48,8 +48,7 @@ public class MainActivity extends Activity implements OnClickListener, OnDSListe
         // Setting the layout;[.
         setContentView(R.layout.activity_main);
 
-        // Initializing the droid speech and setting the listener
-        droidSpeech = new DroidSpeech(this, getFragmentManager());
+        // Initializing the droid speech and setting the listenerdroidSpeech = new DroidSpeech(this, getFragmentManager());
         droidSpeech.setOnDroidSpeechListener(this);
         droidSpeech.setShowRecognitionProgressView(true);
         droidSpeech.setRecognitionProgressMsgColor(Color.WHITE);
@@ -162,7 +161,6 @@ public class MainActivity extends Activity implements OnClickListener, OnDSListe
     {
         Log.i(TAG, "Live speech result = " + liveSpeechResult);
         if(liveSpeechResult.contains("마크")){
-            droidSpeech.closeDroidSpeechOperations();
             voiceinput = liveSpeechResult;
             callname();
         }
@@ -174,7 +172,6 @@ public class MainActivity extends Activity implements OnClickListener, OnDSListe
         // Setting the final speech result
 
         if (finalSpeechResult.equals("마크")) {
-            droidSpeech.closeDroidSpeechOperations();
             voiceinput = finalSpeechResult;
             callname();
         }
