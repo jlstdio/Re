@@ -26,7 +26,7 @@ It would be good for you and good for our planet too!
 
 # Progression
  - 2019.1.19 project started [Detail * korean *](https://blog.naver.com/robo813/221453438192/)
- - 2019.2.21demo version hardware assembly  [Detail * korean *]([https://blog.naver.com/robo813/221471834652/)
+ - 2019.2.21demo version hardware assembly [Detail * korean *](https://blog.naver.com/robo813/221471834652/)
 
 # Feature
 - added
