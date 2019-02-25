@@ -33,7 +33,7 @@ It would be good for you and good for our planet too!
 
 | content | added feature |
 | :------------ | :-----------: |
-| Basic Feature | voice recognition(continuous) |
+| Basic Feature | voice recognition(continuous), date, time |
 | Smart Feature | none |
 | AI Feature | none |
 
@@ -43,6 +43,6 @@ this chart can be changed
 
 | content | feature |
 | :------------ | :-----------: |
-| Basic Feature | weather, time, timer, alarm, memo, search, radio, calculate, message, reminder, news, sports, date, currency, stock, dictionary, find my phone, volume adjustment, movie, Tv |
+| Basic Feature | weather, timer, alarm, memo, search, radio, calculate, message, reminder, news, sports, currency, stock, dictionary, find my phone, volume adjustment, movie, Tv |
 | Smart Feature | Understanding context, recognizing user's pattern, error report, phone sync, IOT, recognizing user |
 | AI Feature | Understanding situation, talk to user itself, join conversation |

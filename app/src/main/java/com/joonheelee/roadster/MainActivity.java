@@ -35,6 +35,7 @@ public class MainActivity extends Activity implements OnClickListener, OnDSListe
     TextView finalSpeechResult;
 
     static public String voiceinput;
+    static public
 
     TextToSpeech tts;
 

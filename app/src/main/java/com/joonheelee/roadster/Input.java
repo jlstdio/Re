@@ -15,7 +15,7 @@ public class Input {
         * 오늘 온도어떄
         * */
         if(input.contains("기온")  || input.contains("온")){
-            
+
         }
 
         if(input.contains("미세먼지")){
