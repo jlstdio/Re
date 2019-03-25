@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Roadster</string>
+    <string name="app_name">DroidSpeechExample</string>
+    <string name="final_speech_result">Final Speech Result:</string>
+    <string name="no_data">---</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
 </resources>

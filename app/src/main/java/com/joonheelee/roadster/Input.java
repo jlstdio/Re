@@ -5,7 +5,6 @@ public class Input {
     public void word(){
         String input = MainActivity.voiceinput;
 
-
         //Weather
         /* 오늘/내일(다른 날짜) 날씨 어때
         * 오늘 기온 어때
@@ -13,7 +12,8 @@ public class Input {
         * 오늘 비와?
         * 오늘 맑아?
         * 오늘 온도어떄
-        * */
+        */
+
         if(input.contains("기온")  || input.contains("온")){
 
         }
@@ -53,6 +53,10 @@ public class Input {
             }
         }
 
+        //music
+        if(input.contains("노래") || input.contains("음악")){
+
+        }
         //alarm
 
         //memo

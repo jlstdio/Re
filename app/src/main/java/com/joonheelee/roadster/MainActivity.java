@@ -3,6 +3,9 @@ package com.joonheelee.roadster;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.speech.tts.TextToSpeech;
+import android.speech.tts.TextToSpeech.OnInitListener;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -14,12 +17,9 @@ import com.vikramezhil.droidspeech.DroidSpeech;
 import com.vikramezhil.droidspeech.OnDSListener;
 import com.vikramezhil.droidspeech.OnDSPermissionsListener;
 
+import android.media.MediaPlayer;
+
 import java.util.List;
-
-import android.speech.tts.TextToSpeech;
-import android.speech.tts.TextToSpeech.OnInitListener;
-
-import com.joonheelee.roadster.Input;
 
 /**
  * Droid Speech Example Activity
@@ -35,11 +35,11 @@ public class MainActivity extends Activity implements OnClickListener, OnDSListe
     TextView finalSpeechResult;
 
     static public String voiceinput;
-    static public
 
     TextToSpeech tts;
 
-    // MARK: Activity Methods
+    MediaPlayer mp;
+    int resMp3[] = {R.raw.me, R.raw.backwalking, R.raw.womancry, R.raw.recovery, R.raw.music, R.raw.relove};
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -50,6 +50,7 @@ public class MainActivity extends Activity implements OnClickListener, OnDSListe
         setContentView(R.layout.activity_main);
 
         // Initializing the droid speech and setting the listenerdroidSpeech = new DroidSpeech(this, getFragmentManager());
+        droidSpeech = new DroidSpeech(this, getFragmentManager());
         droidSpeech.setOnDroidSpeechListener(this);
         droidSpeech.setShowRecognitionProgressView(true);
         droidSpeech.setRecognitionProgressMsgColor(Color.WHITE);
@@ -145,13 +146,60 @@ public class MainActivity extends Activity implements OnClickListener, OnDSListe
         // Log.i(TAG, "Rms change value = " + rmsChangedValue);
     }
 
+    private void Play(int selNo){
+
+        Stop();
+
+        mp = MediaPlayer.create(MainActivity.this, resMp3[selNo]);
+        mp.start();
+    }
+
+    private void Stop(){
+
+        if(mp!=null){
+            mp.stop();
+            mp = null;
+        }
+
+    }
+
     public void callname(){
 
-        String myText1 = "네....";
-        String myText2 = "말씀하세요";
+        if(voiceinput.contains("노래")){
+            String str = "노래..틀어드릴께요";
+            tts.speak(str, TextToSpeech.QUEUE_FLUSH, null);
 
-        tts.speak(myText1, TextToSpeech.QUEUE_FLUSH, null);
-        tts.speak(myText2, TextToSpeech.QUEUE_ADD, null);
+            new Handler().postDelayed(new Runnable()
+            {
+                @Override
+                public void run()
+                {
+                    Play(0);
+
+                }
+            }, 600);// 0.5초 정도 딜레이를 준 후 시작
+        }
+
+        if(voiceinput.contains("그만")){
+            Stop();
+            new Handler().postDelayed(new Runnable()
+            {
+                @Override
+                public void run()
+                {
+                    String str = "노래를 멈췄어요";
+                    tts.speak(str, TextToSpeech.QUEUE_FLUSH, null);
+                }
+            }, 150);// 0.5초 정도 딜레이를 준 후 시작
+        }
+
+        else{
+            String myText1 = "네....";
+            String myText2 = "말씀하세요";
+
+            tts.speak(myText1, TextToSpeech.QUEUE_FLUSH, null);
+            tts.speak(myText2, TextToSpeech.QUEUE_ADD, null);
+        }
 
         Input i = new Input();
         i.word();
@@ -161,10 +209,35 @@ public class MainActivity extends Activity implements OnClickListener, OnDSListe
     public void onDroidSpeechLiveResult(String liveSpeechResult)
     {
         Log.i(TAG, "Live speech result = " + liveSpeechResult);
+        /*
         if(liveSpeechResult.contains("마크")){
+            droidSpeech.closeDroidSpeechOperations();
             voiceinput = liveSpeechResult;
             callname();
+            voiceinput = liveSpeechResult;
+            droidSpeech.closeDroidSpeechOperations();
+
+            new Handler().postDelayed(new Runnable()
+            {
+                @Override
+                public void run()
+                {
+                    droidSpeech.startDroidSpeechRecognition();
+                }
+            }, 1500);// 0.5초 정도 딜레이를 준 후 시작
         }
+        else{
+            droidSpeech.closeDroidSpeechOperations();
+            new Handler().postDelayed(new Runnable()
+            {
+                @Override
+                public void run()
+                {
+                    droidSpeech.startDroidSpeechRecognition();
+                }
+            }, 500);// 0.5초 정도 딜레이를 준 후 시작
+
+        }*/
 
     }
 
@@ -172,12 +245,34 @@ public class MainActivity extends Activity implements OnClickListener, OnDSListe
     public void onDroidSpeechFinalResult(String finalSpeechResult) {
         // Setting the final speech result
 
-        if (finalSpeechResult.equals("마크")) {
+        if (finalSpeechResult.contains("마크") || finalSpeechResult.contains("그만")) {
             voiceinput = finalSpeechResult;
+            droidSpeech.closeDroidSpeechOperations();
             callname();
+
+            new Handler().postDelayed(new Runnable()
+            {
+                @Override
+                public void run()
+                {
+                    droidSpeech.startDroidSpeechRecognition();
+                }
+            }, 1500);// 0.5초 정도 딜레이를 준 후 시작
         }
-        else
-            droidSpeech.startDroidSpeechRecognition();
+
+        else{
+            voiceinput = finalSpeechResult;
+            droidSpeech.closeDroidSpeechOperations();
+            new Handler().postDelayed(new Runnable()
+            {
+                @Override
+                public void run()
+                {
+                    droidSpeech.startDroidSpeechRecognition();
+                }
+            }, 500);// 0.5초 정도 딜레이를 준 후 시작
+        }
+
     }
 
     @Override
