@@ -25,15 +25,17 @@ It would be good for you and good for our planet too!
 최신 스마트 스피커를 만들어낼 수 있는 프로젝트롤 진행하고자 했습니다.
 
 # Progression
- - 2019.1.19 project started [Detail * korean *](https://blog.naver.com/robo813/221453438192/)
- - 2019.2.21demo version hardware assembly [Detail * korean *](https://blog.naver.com/robo813/221471834652/)
+ - 2019.1.19 project started [See article * korean *](https://blog.naver.com/robo813/221453438192/)
+ - 2019.2.21demo version hardware assembly [See article * korean *](https://blog.naver.com/robo813/221471834652/)
+ - 2019.3.25 SW update [See article * korean *](https://blog.naver.com/robo813/221495848827/)
+ 
 
 # Feature
 - added
 
 | content | added feature |
 | :------------ | :-----------: |
-| Basic Feature | voice recognition(continuous), date, time |
+| Basic Feature | voice recognition(continuous), date, time, music |
 | Smart Feature | none |
 | AI Feature | none |
 
