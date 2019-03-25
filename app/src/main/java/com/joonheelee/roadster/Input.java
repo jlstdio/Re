@@ -6,7 +6,8 @@ public class Input {
 
     static public String resultoutput;
 
-    Time i = new Time();
+    Time t = new Time();
+    Calculate c = new Calculate();
 
     public void word(){
         String input = MainActivity.voiceinput;
@@ -51,7 +52,7 @@ public class Input {
         else if(input.contains("몇 시") || input.contains("몇시")){
             if(input.contains("지금")){
 
-                i.curtime();
+                t.curtime();
                 resultoutput = "현재시각은.." + MainActivity.anydata + ".입니다";
             }
         }
@@ -60,7 +61,7 @@ public class Input {
         else if(input.contains("날짜") || input.contains("요일")){
            if(input.contains("오늘")){
 
-               i.curdate();
+               t.curdate();
                String date[] = MainActivity.anydata.split("/");
                resultoutput = "오늘은.." + date[1] + "월" +date[0] + "일" + ".입니다";
             }
@@ -93,8 +94,19 @@ public class Input {
         }
 
         //calculate
-        if(input.contains("계산")){
-            resultoutput = "현재 계산 기능은 지원하지 않습니다";
+        if(input.contains("계산") || input.contains("더하기") || input.contains("빼기") || input.contains("곱하기") || input.contains("나누기") || input.contains("루트") || input.contains("제곱")){
+
+            if(input.contains("더하기")) c.plus();
+
+            if(input.contains("빼기")) c.subtract();
+
+            if(input.contains("곱하기")) c.multiple();
+
+            if(input.contains("나누기")) c.divide();
+
+            if(input.contains("제곱")) c.square();
+
+            if(input.contains("루트")) c.root();
         }
 
         //message
