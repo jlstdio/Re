@@ -21,12 +21,6 @@ import android.media.MediaPlayer;
 
 import java.util.List;
 
-/**
- * Droid Speech Example Activity
- *
- * @author Vikram Ezhil
- */
-
 public class MainActivity extends Activity implements OnClickListener, OnDSListener, OnDSPermissionsListener, OnInitListener {
     public final String TAG = "Activity_DroidSpeech";
 
@@ -35,11 +29,13 @@ public class MainActivity extends Activity implements OnClickListener, OnDSListe
     TextView finalSpeechResult;
 
     static public String voiceinput;
+    static public String anydata;
 
     TextToSpeech tts;
 
     MediaPlayer mp;
     int resMp3[] = {R.raw.me, R.raw.backwalking, R.raw.womancry, R.raw.recovery, R.raw.music, R.raw.relove};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -146,6 +142,7 @@ public class MainActivity extends Activity implements OnClickListener, OnDSListe
         // Log.i(TAG, "Rms change value = " + rmsChangedValue);
     }
 
+
     private void Play(int selNo){
 
         Stop();
@@ -163,11 +160,15 @@ public class MainActivity extends Activity implements OnClickListener, OnDSListe
 
     }
 
+
     public void callname(){
 
-        if(voiceinput.contains("노래")){
-            String str = "노래..틀어드릴께요";
-            tts.speak(str, TextToSpeech.QUEUE_FLUSH, null);
+        Input i = new Input();
+        i.word();
+
+        tts.speak(Input.resultoutput, TextToSpeech.QUEUE_FLUSH, null);
+
+        if(Input.resultoutput.contains("노래")){
 
             new Handler().postDelayed(new Runnable()
             {
@@ -192,17 +193,6 @@ public class MainActivity extends Activity implements OnClickListener, OnDSListe
                 }
             }, 150);// 0.5초 정도 딜레이를 준 후 시작
         }
-
-        else{
-            String myText1 = "네....";
-            String myText2 = "말씀하세요";
-
-            tts.speak(myText1, TextToSpeech.QUEUE_FLUSH, null);
-            tts.speak(myText2, TextToSpeech.QUEUE_ADD, null);
-        }
-
-        Input i = new Input();
-        i.word();
     }
 
     @Override
