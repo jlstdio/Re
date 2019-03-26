@@ -5,6 +5,7 @@ public class Calculate {
     String input = MainActivity.voiceinput;
 
     public void plus(){
+        input = input.replaceAll("마크","");
         String math[] = input.split("더하기");
 
         int mathint[] = {0};

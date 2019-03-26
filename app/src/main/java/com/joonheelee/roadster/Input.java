@@ -6,6 +6,7 @@ public class Input {
 
     Time t = new Time();
     Calculate c = new Calculate();
+    Weather w = new Weather();
 
     public void word(){
         String input = MainActivity.voiceinput;
@@ -19,7 +20,6 @@ public class Input {
         * 오늘 온도어떄
         */
         if(input.contains("기온")  || input.contains("온도")){
-
         }
 
         else if(input.contains("미세먼지")){
@@ -72,27 +72,27 @@ public class Input {
         }
 
         //TODO alarm
-        if(input.contains("알람") || input.contains("알림")){
+        else if(input.contains("알람") || input.contains("알림")){
             resultoutput = "현재 알람 기능은 지원하지 않습니다";
         }
 
         //TODO memo
-        if(input.contains("메모")){
+        else if(input.contains("메모")){
             resultoutput = "현재 메모 기능은 지원하지 않습니다";
         }
 
         //TODO search
-        if(input.contains("검색") || input.contains("뭐야")){
+        else if(input.contains("검색") || input.contains("뭐야")){
             resultoutput = "현재 검색 기능은 지원하지 않습니다";
         }
 
         //TODO radio, podcast
-        if(input.contains("라디오")){
+        else if(input.contains("라디오")){
             resultoutput = "현재 라디오 기능은 지원하지 않습니다";
         }
 
         //TODO calculate
-        if(input.contains("계산") || input.contains("더하기") || input.contains("빼기") || input.contains("곱하기") || input.contains("나누기") || input.contains("루트") || input.contains("제곱")){
+        else if(input.contains("계산") || input.contains("더하기") || input.contains("빼기") || input.contains("곱하기") || input.contains("나누기") || input.contains("루트") || input.contains("제곱")){
 
             if(input.contains("더하기")) c.plus();
 
@@ -108,7 +108,7 @@ public class Input {
         }
 
         //TODO message
-        if(input.contains("메세지") || input.contains("메시지") || input.contains("문자")){
+        else if(input.contains("메세지") || input.contains("메시지") || input.contains("문자")){
             resultoutput = "현재 문자 기능은 지원하지 않습니다";
         }
 
