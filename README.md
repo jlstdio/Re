@@ -1,5 +1,30 @@
+# MIT License
+
+Copyright (c) 2019 이준희(LEE JOON HEE)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
 # Site link
 [Project site](https://neo81389.github.io/Re/)
+
+# Wiki Link
+[Wiki site](https://github.com/neo81389/Re/wiki/Welcome-to-%22RE%22-project-wiki/)
 
 # Re
 Project to make your old Android smart phone into a SmartSpeaker
@@ -36,11 +61,11 @@ I'm going to use this project to try out features that no one has ever tried, an
 
 저는 이러한 스마트폰을 활용하여 대략 2만원 초반 정도의 가격이면(스피커가 있다면 돈이 아예 들지 않는)
 
-최신 스마트 스피커를 만들어낼 수 있는 프로젝트롤 진행하고자 했습니다.
+최신 스마트 스피커를 만들어낼 수 있는 프로젝트를 진행하고자 했습니다.
 
 비교적 적은 돈으로 사람들에게 스마트 스피커라는 하나의 미래 기술을 소개하고, 보급하기위하는데 목적이 있습니다.
 
-뿐만 아니라 이러한 제 개인적으로는 안드로이드의 다양한 기능들을 사용하며 개발 기술을 발전시키려고합니다.
+뿐만 아니라 제 개인적으로는 안드로이드의 다양한 기능들을 사용하며 개발 기술을 발전시키려고합니다.
 
 또한 대기업은 오류의 가능성이 있는 기술들을 함부로 탑재하지 못합니다.
 

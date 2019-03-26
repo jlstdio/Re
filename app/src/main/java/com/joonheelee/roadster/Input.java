@@ -1,7 +1,5 @@
 package com.joonheelee.roadster;
 
-import android.speech.tts.TextToSpeech;
-
 public class Input {
 
     static public String resultoutput;
