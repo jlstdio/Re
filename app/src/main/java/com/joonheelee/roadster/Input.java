@@ -12,7 +12,7 @@ public class Input {
     public void word(){
         String input = MainActivity.voiceinput;
 
-        //Weather
+        //TODO Weather
         /* 오늘/내일(다른 날짜) 날씨 어때
         * 오늘 기온 어때
         * 오늘 미세먼지 어때
@@ -36,7 +36,7 @@ public class Input {
 
         }
 
-        //Volume
+        //TODO Volume
         /*소리/볼륨/음량/음성 올려줘
         * 10만큼 올려줘/내려줘
         * 음소거
@@ -67,33 +67,33 @@ public class Input {
             }
         }
 
-        //music
+        //TODO music
         else if(input.contains("노래") || input.contains("음악")){
 
            resultoutput = "노래 틀어드릴께요";
         }
 
-        //alarm
+        //TODO alarm
         if(input.contains("알람") || input.contains("알림")){
             resultoutput = "현재 알람 기능은 지원하지 않습니다";
         }
 
-        //memo
+        //TODO memo
         if(input.contains("메모")){
             resultoutput = "현재 메모 기능은 지원하지 않습니다";
         }
 
-        //search
+        //TODO search
         if(input.contains("검색") || input.contains("뭐야")){
             resultoutput = "현재 검색 기능은 지원하지 않습니다";
         }
 
-        //radio, podcast
+        //TODO radio, podcast
         if(input.contains("라디오")){
             resultoutput = "현재 라디오 기능은 지원하지 않습니다";
         }
 
-        //calculate
+        //TODO calculate
         if(input.contains("계산") || input.contains("더하기") || input.contains("빼기") || input.contains("곱하기") || input.contains("나누기") || input.contains("루트") || input.contains("제곱")){
 
             if(input.contains("더하기")) c.plus();
@@ -109,28 +109,28 @@ public class Input {
             if(input.contains("루트")) c.root();
         }
 
-        //message
+        //TODO message
         if(input.contains("메세지") || input.contains("메시지") || input.contains("문자")){
             resultoutput = "현재 문자 기능은 지원하지 않습니다";
         }
 
-        //reminder
+        //TODO reminder
 
-        //news
+        //TODO news
 
-        //sports
+        //TODO sports
 
-        //currency
+        //TODO currency
 
-        //stock
+        //TODO stock
 
-        //dictionary
+        //TODO dictionary
 
-        //movie
+        //TODO movie
 
-        //Tv
+        //TODO Tv
 
-        //find my phone
+        //TODO find my phone
 
         //introducing
         else if(input.contains("너") || input.contains("누구야")){

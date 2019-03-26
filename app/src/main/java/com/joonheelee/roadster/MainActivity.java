@@ -20,6 +20,8 @@ import com.vikramezhil.droidspeech.OnDSPermissionsListener;
 import android.media.MediaPlayer;
 
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends Activity implements OnClickListener, OnDSListener, OnDSPermissionsListener, OnInitListener {
     public final String TAG = "Activity_DroidSpeech";
@@ -36,6 +38,9 @@ public class MainActivity extends Activity implements OnClickListener, OnDSListe
     MediaPlayer mp;
     int resMp3[] = {R.raw.me, R.raw.backwalking, R.raw.womancry, R.raw.recovery, R.raw.music, R.raw.relove};
 
+    Timer timer;
+    int timerCount;
+    Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -63,6 +68,24 @@ public class MainActivity extends Activity implements OnClickListener, OnDSListe
 
         stop = findViewById(R.id.close);
         stop.setOnClickListener(this);
+
+        Timer();
+    }
+
+    private void Timer()
+    {
+        timer = new Timer();
+        timer.schedule(new TimerTask()
+        {
+            @Override
+            public void run()
+            {
+                //TODO time check
+                Time t = new Time();
+                t.timer();
+
+            }
+        }, 0, 1000);
     }
 
     @Override
@@ -86,8 +109,6 @@ public class MainActivity extends Activity implements OnClickListener, OnDSListe
             stop.performClick();
         }
     }
-
-    // MARK: OnClickListener Method
 
     @Override
     public void onClick(View view)
@@ -116,8 +137,6 @@ public class MainActivity extends Activity implements OnClickListener, OnDSListe
                 break;
         }
     }
-
-    // MARK: DroidSpeechListener Methods
 
     @Override
     public void onDroidSpeechSupportedLanguages(String currentSpeechLanguage, List<String> supportedSpeechLanguages)

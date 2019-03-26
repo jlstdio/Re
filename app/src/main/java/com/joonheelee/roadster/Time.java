@@ -22,5 +22,11 @@ public class Time {
         MainActivity.anydata = sdfNow.format(date);
     }
 
+    public void timer(){
+        SimpleDateFormat sdfNow = new SimpleDateFormat("HH:mm");
+        // nowDate 변수에 값을 저장한다.
+        MainActivity.anydata = sdfNow.format(date);
+    }
+
 //yyyy/MM/dd HH:mm:ss
 }
