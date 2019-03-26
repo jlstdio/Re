@@ -26,7 +26,7 @@ SOFTWARE.
 # Wiki Link
 [Wiki site](https://github.com/neo81389/Re/wiki/Welcome-to-%22RE%22-project-wiki/)
 
-#App icon
+# App icon
 ![](https://github.com/neo81389/I-m-no-photographer/blob/master/Project_RE_icon.png)
 
 # Re
