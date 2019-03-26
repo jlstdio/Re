@@ -3,6 +3,7 @@
 
 # Re
 Project to make your old Android smart phone into a SmartSpeaker
+
 집에서 사용하지 않는 안드로이드 스마트폰을 스마트 스피커로 만들기 위한 프로젝트입니다.
 
 # Why am I doing this?
@@ -12,13 +13,13 @@ So we keep them at home because it’s troublesome and the smartphone is actuall
 
 But when we keep them in our house than it will only take space.
 
-So I end up thinking that using these smartphones into a smart speaker for only about 20$(if you already have a speaker than it will cost 0$!)
+So I end up thinking that making these smart phones into a smart speaker for only about 20$(if you already have a speaker than it will cost 0$!)
 
 Project is aimed at introducing and distributing the future technology of smart speakers to people with relatively little money.
 
 I’m expecting to use a lot of Android features during development
 
-Also, large companies cannot afford to mount technologies that are likely to be error the prone.
+Also, large companies cannot afford to mount technologies that are likely to be error the phone.
 
 Because there's a huge impact on the behavior of these companies.
 
