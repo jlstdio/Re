@@ -110,15 +110,15 @@ public class Input {
         }
 
         //TODO calculate
-        else if(input.contains("계산") || input.contains("더하기") || input.contains("빼기") || input.contains("곱하기") || input.contains("나누기") || input.contains("루트") || input.contains("제곱")){
+        else if(input.contains("계산") || input.contains("더하기") || input.contains("+") || input.contains("빼기") || input.contains("-") || input.contains("곱하기") || input.contains("*") || input.contains("나누기") || input.contains("/") || input.contains("루트") || input.contains("제곱")){
 
-            if(input.contains("더하기")) c.plus();
+            if(input.contains("더하기") || input.contains("+")) c.plus();
 
-            if(input.contains("빼기")) c.subtract();
+            if(input.contains("빼기") || input.contains("-")) c.subtract();
 
-            if(input.contains("곱하기")) c.multiple();
+            if(input.contains("곱하기") || input.contains("*")) c.multiple();
 
-            if(input.contains("나누기")) c.divide();
+            if(input.contains("나누기") || input.contains("/")) c.divide();
 
             if(input.contains("제곱")) c.square();
 

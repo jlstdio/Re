@@ -11,6 +11,10 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+/*
+날씨 관련 정보를 취급합니다.
+*/
+
 public class Weather {
 
 }

@@ -38,7 +38,9 @@ public class MainActivity extends Activity implements OnClickListener, OnDSListe
     TextToSpeech tts;
 
     MediaPlayer mp;
-    int resMp3[] = {R.raw.me, R.raw.backwalking, R.raw.womancry, R.raw.recovery, R.raw.music, R.raw.relove};
+    int resMp3[] = {R.raw.a, R.raw.b};
+    //음원 파일은 저작권이 없는 NoCopyRightMusic에서 제공하는 음원을 사용합니다.
+    //a,b는 각 DanceFloor과 TurnUP입니다.
 
     Timer timer;
     public static int timecount = 0;

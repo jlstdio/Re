@@ -5,6 +5,10 @@ import com.joonheelee.roadster.MainClass.MainActivity;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/*
+알람, 타이머, 시각, 요일 등 시간관련 서비스를 담당합니다.
+*/
+
 public class Time {
 
     static String strtimerdata = "0:0:0";
