@@ -1,4 +1,4 @@
-package com.joonheelee.roadster;
+package com.joonheelee.roadster.MainClass;
 
 import android.app.Activity;
 import android.graphics.Color;
@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.joonheelee.roadster.R;
+import com.joonheelee.roadster.ServiceClass.Time;
 import com.vikramezhil.droidspeech.DroidSpeech;
 import com.vikramezhil.droidspeech.OnDSListener;
 import com.vikramezhil.droidspeech.OnDSPermissionsListener;
@@ -39,8 +41,9 @@ public class MainActivity extends Activity implements OnClickListener, OnDSListe
     int resMp3[] = {R.raw.me, R.raw.backwalking, R.raw.womancry, R.raw.recovery, R.raw.music, R.raw.relove};
 
     Timer timer;
-    int timerCount;
-    Handler handler = new Handler();
+    public static int timecount = 0;
+
+    Time t = new Time();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -72,6 +75,7 @@ public class MainActivity extends Activity implements OnClickListener, OnDSListe
         Timer();
     }
 
+    //타이머, 알람 체커
     private void Timer()
     {
         timer = new Timer();
@@ -80,9 +84,13 @@ public class MainActivity extends Activity implements OnClickListener, OnDSListe
             @Override
             public void run()
             {
-                //TODO time check
-                Time t = new Time();
-                t.timer();
+                timecount++;
+                if(timecount == Time.timetocompare){
+                    Time.timetocompare = -1;
+                    timecount = 0;
+                    tts.speak("타이머가 울립니다", TextToSpeech.QUEUE_FLUSH, null);
+                    Play(2);
+                }
 
             }
         }, 0, 1000);
@@ -161,7 +169,6 @@ public class MainActivity extends Activity implements OnClickListener, OnDSListe
         // Log.i(TAG, "Rms change value = " + rmsChangedValue);
     }
 
-
     private void Play(int selNo){
 
         Stop();
@@ -218,41 +225,10 @@ public class MainActivity extends Activity implements OnClickListener, OnDSListe
     public void onDroidSpeechLiveResult(String liveSpeechResult)
     {
         Log.i(TAG, "Live speech result = " + liveSpeechResult);
-        /*
-        if(liveSpeechResult.contains("마크")){
-            droidSpeech.closeDroidSpeechOperations();
-            voiceinput = liveSpeechResult;
-            callname();
-            voiceinput = liveSpeechResult;
-            droidSpeech.closeDroidSpeechOperations();
-
-            new Handler().postDelayed(new Runnable()
-            {
-                @Override
-                public void run()
-                {
-                    droidSpeech.startDroidSpeechRecognition();
-                }
-            }, 1500);// 0.5초 정도 딜레이를 준 후 시작
-        }
-        else{
-            droidSpeech.closeDroidSpeechOperations();
-            new Handler().postDelayed(new Runnable()
-            {
-                @Override
-                public void run()
-                {
-                    droidSpeech.startDroidSpeechRecognition();
-                }
-            }, 500);// 0.5초 정도 딜레이를 준 후 시작
-
-        }*/
-
     }
 
     @Override
     public void onDroidSpeechFinalResult(String finalSpeechResult) {
-        // Setting the final speech result
 
         if (finalSpeechResult.contains("마크") || finalSpeechResult.contains("그만")) {
             voiceinput = finalSpeechResult;
@@ -266,7 +242,7 @@ public class MainActivity extends Activity implements OnClickListener, OnDSListe
                 {
                     droidSpeech.startDroidSpeechRecognition();
                 }
-            }, 1500);// 0.5초 정도 딜레이를 준 후 시작
+            }, 1500);
         }
 
         else{
@@ -279,7 +255,7 @@ public class MainActivity extends Activity implements OnClickListener, OnDSListe
                 {
                     droidSpeech.startDroidSpeechRecognition();
                 }
-            }, 500);// 0.5초 정도 딜레이를 준 후 시작
+            }, 500);
         }
 
     }
@@ -307,8 +283,6 @@ public class MainActivity extends Activity implements OnClickListener, OnDSListe
             }
         });
     }
-
-    // MARK: DroidSpeechPermissionsListener Method
 
     @Override
     public void onDroidSpeechAudioPermissionStatus(boolean audioPermissionGiven, String errorMsgIfAny)

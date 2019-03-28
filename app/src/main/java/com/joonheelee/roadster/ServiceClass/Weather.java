@@ -1,4 +1,4 @@
-package com.joonheelee.roadster;
+package com.joonheelee.roadster.ServiceClass;
 
 import android.content.ContentValues;
 import android.location.Location;

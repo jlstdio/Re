@@ -1,4 +1,8 @@
-package com.joonheelee.roadster;
+package com.joonheelee.roadster.MainClass;
+
+import com.joonheelee.roadster.ServiceClass.Calculate;
+import com.joonheelee.roadster.ServiceClass.Time;
+import com.joonheelee.roadster.ServiceClass.Weather;
 
 public class Input {
 
@@ -46,7 +50,7 @@ public class Input {
             resultoutput = "현재 음량은 수동으로만 조절가능합니다.";
         }
 
-        //timer matter
+        //time matter
         else if(input.contains("몇 시") || input.contains("몇시")){
             if(input.contains("지금")){
 
@@ -55,13 +59,27 @@ public class Input {
             }
         }
 
+        else if(input.contains("타이머")){
+            t.settimer();
+            resultoutput = "타이머를 설정했어요";
+        }
+
         //date
-        else if(input.contains("날짜") || input.contains("요일")){
+        else if(input.contains("날짜")){
            if(input.contains("오늘")){
 
                t.curdate();
                String date[] = MainActivity.anydata.split("/");
                resultoutput = "오늘은.." + date[1] + "월" +date[0] + "일" + ".입니다";
+            }
+        }
+
+        else if(input.contains("요일")){
+            if(input.contains("오늘")){
+
+                t.curdate();
+                String date[] = MainActivity.anydata.split("/");
+                resultoutput = "오늘은.." + date[1] + "월" +date[0] + "일" + ".입니다";
             }
         }
 

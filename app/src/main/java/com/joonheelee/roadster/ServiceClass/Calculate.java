@@ -1,4 +1,7 @@
-package com.joonheelee.roadster;
+package com.joonheelee.roadster.ServiceClass;
+
+import com.joonheelee.roadster.MainClass.Input;
+import com.joonheelee.roadster.MainClass.MainActivity;
 
 public class Calculate {
 

@@ -1,4 +1,4 @@
-package com.joonheelee.roadster;
+package com.joonheelee.roadster.SubClass;
 
 import android.app.Activity;
 import android.content.Context;
@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
+
+import com.joonheelee.roadster.MainClass.MainActivity;
+import com.joonheelee.roadster.R;
 
 
 public class Start extends Activity {
