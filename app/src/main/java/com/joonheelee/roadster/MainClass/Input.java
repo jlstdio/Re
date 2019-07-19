@@ -150,7 +150,7 @@ public class Input {
 
         //introducing
         else if(input.contains("너") || input.contains("누구야")){
-            resultoutput = "저는.안드로이드스마트폰으로 스파트 스피커를 만드는..RE..프로젝트의 일환으로 탄생한 프로그램입니다";
+            resultoutput = "저는.안드로이드스마트폰으로 스마트 스피커를 만드는..RE..프로젝트의 일환으로 탄생한 프로그램입니다";
         }
 
         //greeting
